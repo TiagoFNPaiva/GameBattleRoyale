@@ -1,0 +1,297 @@
+html{
+    background-color: black;
+}
+
+body{
+    background-image: url(../images/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header{
+    padding-top: 7rem;
+    .header_frame{
+        position: relative;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 23rem;
+        background-image: url(../images/header_frame.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        h1{
+            font-size: 4rem;
+            font-family: "retro";
+            text-align: center;
+            line-height: 5.2rem;
+        }
+        .main_h1{
+            position: absolute;
+            color: white;
+            z-index: 2;
+        }
+        .shadow_h1{
+            position: absolute;
+            color: #231E2B;
+            transform: translate(-0.60rem,0.60rem);
+            z-index: 1;
+        }
+        
+    }
+}
+.game{
+    opacity: 1;
+    
+    .game__container{
+        max-width: 128rem;
+        width: 100rem;
+        aspect-ratio: 16/9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto -5rem;
+        background-color: transparent;
+        .option_frame{
+            width: 33.3rem;
+            height: 30.5rem;
+            background-image: url(../images/choice_frame.png);
+        }
+        .game__area{
+            width: 25.7rem;
+            height: 100%;
+            //background-color: burlywood;
+            margin:0 auto;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .game__area__name{
+            font-size: 4rem;
+            text-align: center;
+        }
+        .game__vs{
+            width: 17rem;
+            height: 30rem;
+            margin: 0 auto;
+            //background-color: cadetblue;
+            background-image: url(../images/vs_frame.png);
+            background-position: bottom;
+            background-repeat: no-repeat;
+            position: relative;
+
+            canvas{
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                
+            }
+        }
+        .game__vs__style{
+            font-size: 16rem;
+            text-align: center;
+        }
+    }
+    
+    #choice_container{
+        display: flex;
+        max-width: 100rem;
+        min-height: 8rem;
+        margin: 0 auto;
+        justify-content: start;
+
+        overflow-x: scroll;   
+        padding-bottom: 1rem;     
+        //background-color: crimson;
+        
+        //scrollbar-width: thin;
+        .choice_frame{
+            min-width: 6.6rem;
+            height: 6.6rem;
+            margin: 0 0.9rem;
+
+            background-image: url(../images/chest_close.png);
+            position: relative;
+            
+            
+        }
+    }
+ 
+}
+
+
+#game__win__container{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: rgba(0,0,0,0.8);
+    .game__win{
+        
+        //display: flex;
+        //justify-content: center;
+        //align-items: center;
+
+        width: 40%;
+        height: 90%;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        background-image: url(../images/winner_frame.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        .game__win__title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            height: 10rem;
+            width: 80%;
+            margin: 0 auto 5rem;
+            padding-top: 10rem;
+            h2{
+                font-size: 2.8rem;
+                font-family: "retro";
+                text-align: center;
+                line-height: 4rem;
+            }
+            .main_h2{
+                position: absolute;
+                color: white;
+                z-index: 2;
+            }
+            .shadow_h2{
+                position: absolute;
+                color: #231E2B;
+                transform: translate(-0.60rem,0.60rem);
+                z-index: 1;
+            }
+        }
+        .option_frame{
+            width: 33.3rem;
+            height: 30.5rem;
+            background-image: url(../images/choice_frame.png);
+            margin: 0 auto;
+            .game__winner{
+                width: 25.7rem;
+                height: 100%;
+                //background-color: burlywood;
+                margin:0 auto;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        .game__win__message{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin:0 auto;
+            width: 33.3rem;
+            min-height: 14rem;
+            font-size: 3.2rem;
+            line-height: 4.4rem;
+            font-family: "retro";
+            text-align: center;
+            color: #FFFFFF;
+        }
+        .game__win__options{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .game__win__options__gameover{
+                width: 39.6rem;
+                height: 8.8rem;
+                position: relative;
+                -webkit-perspective: 600px;
+	            -moz-perspective: 600px;
+                perspective: 600px;
+                .game__win__options__gameover_front{
+                    position: absolute;
+                    top:50%;
+                    left: 50%;
+                    z-index: 900;
+                    
+                    -webkit-transform: rotateX(0deg) rotateY(0deg) translate(-50%,-50%);
+                    -moz-transform: rotateX(0deg) rotateY(0deg) translate(-50%,-50%);
+                    transform-origin: top center;
+                    -webkit-transform-style: preserve-3d;
+                    -moz-transform-style: preserve-3d;
+                    -webkit-backface-visibility: hidden;
+                    -moz-backface-visibility: hidden;
+                    -webkit-transition: all .4s ease-in-out;
+                    -moz-transition: all .4s ease-in-out;
+                    -ms-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                    img{
+                        margin: 0 auto;
+                        min-width: 39.6rem;
+                        min-height: 8.8rem;
+                    }
+                }
+                .game__win__options__gameover_back{
+                    position: absolute;
+                    z-index: 1000;
+                    top:50%;
+                    left: 50%;
+                    
+                    -webkit-transform: rotateX(-180deg) translate(-50%,-50%);
+                    -moz-transform: rotateX(-180deg) translate(-50%,-50%);
+                    transform-origin: top center;
+                    -webkit-transform-style: preserve-3d;
+                    -moz-transform-style: preserve-3d;
+                    -webkit-backface-visibility: hidden;
+                    -moz-backface-visibility: hidden;
+                    -webkit-transition: all .4s ease-in-out;
+                    -moz-transition: all .4s ease-in-out;
+                    -ms-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    transition: all .4s ease-in-out;
+                    img{
+                        margin: 0 auto;
+                        min-width: 39.6rem;
+                        min-height: 8.8rem;
+                    }
+                }
+                &:hover{
+                    .game__win__options__gameover_front{
+                        z-index: 900;
+                        transform-origin: top center;
+                        -webkit-transform: rotateX(180deg) translate(-50%,-50%);
+                        -moz-transform: rotateX(180deg) translate(-50%,-50%);
+                        transform: rotateX(180deg) translate(-50%,-50%);
+                    }
+                    .game__win__options__gameover_back{
+                        z-index: 1000;
+                        transform-origin: top center;
+                        -webkit-transform: rotateX(0deg) rotateY(0deg) translate(-50%,-50%);
+                        -moz-transform: rotateX(0deg) rotateY(0deg) translate(-50%,-50%);
+                        transform: rotateX(0deg) rotateY(0deg) translate(-50%,-50%);
+                    }
+                }
+                margin-bottom: 1.5rem;
+               
+            }
+            
+            .game__win__options__share{
+                width: 39.6rem;
+                height: 8.8rem;
+                img{
+                    margin: 0 auto;
+                    
+                }
+            }  
+        }
+    }
+}
+

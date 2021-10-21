@@ -1,0 +1,44 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+  position: relative;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.no-clicks {
+  pointer-events: none;
+}
+
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #CE5328 #F2CC09;
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #EBD833;
+    //border-radius: 20px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #CE5328;
+    //border-radius: 20px;
+    //border: 3px solid orange;
+  }
