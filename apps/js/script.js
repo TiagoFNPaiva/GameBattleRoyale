@@ -1,4 +1,4 @@
-//window.screen.orientation.lock("landscape")
+
 const db = [
     {
         id: 1,
@@ -174,6 +174,8 @@ const height = () => {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+    window.screen.orientation.lock("landscape")
+
     const sideA = document.getElementById("sideA");
     const sideB = document.getElementById("sideB");
     const sideAM = document.getElementsByClassName("game__area")[0];

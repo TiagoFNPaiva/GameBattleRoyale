@@ -1,8 +1,8 @@
 html{
     background-color: black;
-    /*
+    
     @media (max-width: 767px) and (orientation: portrait) {
-        
+        /*
           transform: rotate(-90deg);
           transform-origin: left top;
           width: 100vh;
@@ -11,9 +11,9 @@ html{
           position: absolute;
           top: 100%;
           left: 0;
-
+        */
       }
-    */
+    
 }
 
 
@@ -114,10 +114,12 @@ header{
         align-items: center;
         margin: 0 auto 1rem;
         background-color: transparent;
+        
         @media (max-width: 767px) and (orientation: portrait) {
             flex-direction: column;
-            
+
         }
+        
         @media(min-width: $tablet){
             aspect-ratio: 16/9;
             justify-content: space-between;
