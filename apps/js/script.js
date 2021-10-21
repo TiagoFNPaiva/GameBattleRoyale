@@ -174,7 +174,7 @@ const height = () => {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    window.screen.orientation.lock("landscape")
+    screen.orientation.lock("landscape")
 
     const sideA = document.getElementById("sideA");
     const sideB = document.getElementById("sideB");
