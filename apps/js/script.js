@@ -1,4 +1,4 @@
-//window.screen.orientation.lock("landscape")
+window.screen.orientation.lock("landscape")
 const db = [
     {
         id: 1,
@@ -14,7 +14,7 @@ const db = [
         id: 3,
         name: "FIFA",
         image: "url(../images/games/fifa.png)"
-    },/*
+    },
     {
         id: 4,
         name: "Final Fantasy",
@@ -114,7 +114,7 @@ const db = [
         id: 23,
         name: "The Legend of Zelda",
         image: "url(../images/games/zelda.png)"
-    }*/
+    }
 ]
 // StackOverflow image preloader
 function preloadImages(urls, allImagesLoadedCallback) {
@@ -150,6 +150,28 @@ preloadImages(imgArr(db), function () {
     console.log('All images were loaded');
 });
 
+
+const width = () => {
+    let a = ""
+    if (window.screen.width < 767) {
+        a = "180px"
+    }
+    else {
+        a = "300px"
+    }
+    return a;
+}
+
+const height = () => {
+    let a = ""
+    if (window.screen.width < 767) {
+        a = "50px"
+    }
+    else {
+        a = "150px"
+    }
+    return a;
+}
 
 window.addEventListener("DOMContentLoaded", () => {
     const sideA = document.getElementById("sideA");
@@ -212,8 +234,8 @@ window.addEventListener("DOMContentLoaded", () => {
             const temp2 = document.getElementsByClassName("game__vs")[0]
             html2canvas(document.querySelector("#capture"), { backgroundColor: null }).then(canvas => {
 
-                canvas.style.width = "170px"
-                canvas.style.height = "100px"
+                canvas.style.width = width()
+                canvas.style.height = height()
                 temp2.appendChild(canvas)
             });
             temp.style.backgroundImage = "url(../images/chest_open.png)";
@@ -223,7 +245,14 @@ window.addEventListener("DOMContentLoaded", () => {
             temp.addEventListener("mouseout", () => {
                 document.getElementsByTagName("canvas")[choice].style.display = "none"
             })
-            if (choice > 5) {
+            if (choice > 5 && screen.width < 768) {
+                choiceCont.scrollBy({
+                    top: 0,
+                    left: 20,
+                    behavior: 'smooth'
+                });
+            }
+            if (choice > 5 && screen.width > 768) {
                 choiceCont.scrollBy({
                     top: 0,
                     left: 100,

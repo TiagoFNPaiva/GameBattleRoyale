@@ -1,0 +1,55 @@
+/* ===================================== */
+/* ======= RESPONSIVE VISIBILITY ======= */
+/* ===================================== */
+
+$tablet: 767px;
+$desktop: 1200px;
+
+.visivel-m{
+    display: block;
+    @media(min-width: $tablet){
+        display: none;
+    }
+    @media(min-width: $desktop){
+        display: none;
+    }
+}
+.visivel-t{
+    display: none;
+    @media(min-width: $tablet){
+        display: block;
+    }
+    @media(min-width: $desktop){
+        display: none;
+    }
+}
+.visivel-t-down{
+    display: block;
+    @media(min-width: $desktop){
+        display: none;
+    }
+}
+.visivel-t-up{
+    display: none;
+    @media(min-width: $tablet){
+        display: block;
+    }
+}
+.visivel-d{
+    display: none;
+    @media(min-width: $tablet){
+        display: none;
+    }
+    @media(min-width: $desktop){
+        display: block;
+    }
+}
+
+
+
+@media(min-width: $tablet){
+                
+}
+@media(min-width: $desktop){
+    
+}

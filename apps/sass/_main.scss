@@ -1,9 +1,7 @@
 html{
     background-color: black;
     @media (max-width: 767px) and (orientation: portrait) {
-        width: 100vh;
-        height: 100vw;
-        /*
+        
           transform: rotate(-90deg);
           transform-origin: left top;
           width: 100vh;
@@ -12,7 +10,7 @@ html{
           position: absolute;
           top: 100%;
           left: 0;
-          */
+
       }
 }
 
@@ -24,26 +22,61 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 
+    //width: 100vw;
+    //height: 100vh;
 
 }
+
+
+
 header{
-    padding-top: 7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    @media(min-width: $tablet){
+        padding-bottom: 0rem;
+        padding-top: 7rem;
+    }
+    @media(min-width: $desktop){
+        
+    }
+
     .header_frame{
         position: relative;
         z-index: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 23rem;
+
+        width: 90%;
+        height: 11rem;
+    
         background-image: url(../images/header_frame.png);
         background-repeat: no-repeat;
         background-position: center;
+
+
+        background-size: contain;
         
+        @media(min-width: $tablet){
+            height: 23rem;
+        }
+        @media(min-width: $desktop){
+            
+        }
         h1{
-            font-size: 4rem;
+            font-size: 1.6rem;
             font-family: "retro";
             text-align: center;
-            line-height: 5.2rem;
+            line-height: 3rem;
+            @media(min-width: $tablet){
+                font-size: 4rem;
+                line-height: 5.2rem;
+            }
+            @media(min-width: $desktop){
+                
+            }
         }
         .main_h1{
             position: absolute;
@@ -53,8 +86,14 @@ header{
         .shadow_h1{
             position: absolute;
             color: #231E2B;
-            transform: translate(-0.60rem,0.60rem);
+            transform: translate(-0.30rem,0.30rem);
             z-index: 1;
+            @media(min-width: $tablet){
+                transform: translate(-0.60rem,0.60rem);
+            }
+            @media(min-width: $desktop){
+                
+            }
         }
         
     }
@@ -67,46 +106,86 @@ header{
     
     .game__container{
         max-width: 128rem;
-        width: 100rem;
-        aspect-ratio: 16/9;
+        width: 95vw;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        margin: 0 auto -5rem;
+        margin: 0 auto 1rem;
         background-color: transparent;
+        @media(min-width: $tablet){
+            aspect-ratio: 16/9;
+            justify-content: space-between;
+            width: 100rem;
+            margin: 0 auto -5rem;
+        }
+        @media(min-width: $desktop){
+            
+        }
         .option_frame{
-            width: 33.3rem;
-            height: 30.5rem;
+            width: 15.3rem;
+            height: 14rem;
             background-image: url(../images/choice_frame.png);
+            background-size: contain;
+            @media(min-width: $tablet){
+                width: 33.3rem;
+                height: 30.5rem;
+            }
+            @media(min-width: $desktop){
+                
+            }
         }
         .game__area{
-            width: 25.7rem;
+            width: 11.6rem;
             height: 100%;
             //background-color: burlywood;
             margin:0 auto;
             background-position: center;
             background-repeat: no-repeat;
+            background-size: contain;
+            @media(min-width: $tablet){
+                width: 25.7rem;
+                height: 100%;
+            }
+            @media(min-width: $desktop){
+                
+            }
         }
         .game__area__name{
             font-size: 4rem;
             text-align: center;
         }
         .game__vs{
-            width: 17rem;
-            height: 30rem;
-            margin: 0 auto;
+            width: 6rem;
+            height: 14rem;
+            margin: 0 -2rem 1rem;
             //background-color: cadetblue;
+            padding-bottom: 1rem;
             background-image: url(../images/vs_frame.png);
+            background-size: contain;
             background-position: bottom;
             background-repeat: no-repeat;
             position: relative;
+            @media(min-width: $tablet){
+                width: 15rem;
+                height: 30rem;
+                margin: 0 auto 2rem;
+            }
+            @media(min-width: $desktop){
+                
+            }
 
             canvas{
                 display: none;
                 position: absolute;
-                left: 0;
-                top: 0;
-                
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-120%);
+                @media(min-width: $tablet){
+                    transform: translate(-50%,-110%);
+                }
+                @media(min-width: $desktop){
+                    
+                }
             }
         }
         .game__vs__style{
@@ -117,24 +196,42 @@ header{
     
     #choice_container{
         display: flex;
-        max-width: 100rem;
-        min-height: 8rem;
+        max-width: 50%;
+        //min-height: 8rem;
         margin: 0 auto;
         justify-content: start;
 
-        overflow-x: scroll;   
-        padding-bottom: 1rem;     
+        overflow-x: scroll; 
+
+        //padding-bottom: 1rem;     
         //background-color: crimson;
         
         //scrollbar-width: thin;
+
+        @media(min-width: $tablet){
+            max-width: 100rem;
+            padding-bottom: 1rem; 
+        }
+        @media(min-width: $desktop){
+            
+        }
         .choice_frame{
-            min-width: 6.6rem;
-            height: 6.6rem;
-            margin: 0 0.9rem;
+            min-width: 2rem;
+            height: 2rem;
+            margin: 0 0.1rem;
 
             background-image: url(../images/chest_close.png);
+            background-size: contain;
             position: relative;
             
+            @media(min-width: $tablet){
+                min-width: 6.6rem;
+                height: 6.6rem;
+                margin: 0 0.9rem;
+            }
+            @media(min-width: $desktop){
+                
+            }
             
         }
     }
