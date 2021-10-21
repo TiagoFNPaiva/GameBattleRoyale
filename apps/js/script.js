@@ -156,6 +156,9 @@ const width = () => {
     if (window.screen.width < 767) {
         a = "180px"
     }
+    if (window.screen.width < 400) {
+        a = "150px"
+    }
     else {
         a = "300px"
     }
@@ -251,6 +254,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 choiceCont.scrollBy({
                     top: 0,
                     left: 20,
+                    behavior: 'smooth'
+                });
+            }
+            if (choice > 5 && screen.width < 768 && screen.height > 700) {
+                choiceCont.scrollBy({
+                    top: 0,
+                    left: 35,
                     behavior: 'smooth'
                 });
             }

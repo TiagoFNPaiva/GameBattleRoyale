@@ -40,6 +40,10 @@ header{
         padding-top: 2rem;
         padding-bottom: 0rem;
     }
+    @media (max-width: 767px) and (orientation: portrait) and (min-height:700px){
+        padding-top: 7rem;
+        padding-bottom: 8rem;
+    }
     @media(min-width: $tablet){
         padding-bottom: 0rem;
         padding-top: 7rem;
@@ -64,6 +68,8 @@ header{
 
 
         background-size: contain;
+
+        
         
         @media(min-width: $tablet){
             height: 23rem;
@@ -144,6 +150,18 @@ header{
                 width: 12rem;
                 height: 11rem;
             }
+            @media (max-width: 767px) and (orientation: portrait) and (min-height:700px){
+                //margin: 0 1rem;
+                width: 14rem;
+                height: 12.8rem;
+                &:first-child{
+                    
+                }
+                &:last-child{
+                    //margin-bottom: 2rem;
+
+                }
+            }
             @media(min-width: $tablet){
                 width: 33.3rem;
                 height: 30.5rem;
@@ -164,6 +182,11 @@ header{
                 width: 9.1rem;
                 height: 100%;
             }
+            @media (max-width: 767px) and (orientation: portrait) and (min-height:700px){
+                width: 10.6rem;
+                height: 100%;
+            }
+            
             @media(min-width: $tablet){
                 width: 25.7rem;
                 height: 100%;
@@ -189,7 +212,11 @@ header{
             position: relative;
             @media (max-width: 767px) and (orientation: portrait) {
                 order:3;
-                margin: 0 10rem;
+                margin: 0 10rem 2rem;
+            }
+            @media (max-width: 767px) and (orientation: portrait) and (min-height:700px){
+                //order:unset;
+                margin: 5rem 10rem 2rem;
             }
 
             @media(min-width: $tablet){
@@ -237,6 +264,7 @@ header{
         @media (max-width: 767px) and (orientation: portrait) {
             max-width: 80%;
         }
+       
 
         @media(min-width: $tablet){
             max-width: 100rem;
@@ -253,6 +281,12 @@ header{
             background-image: url(../images/chest_close.png);
             background-size: contain;
             position: relative;
+
+            @media (max-width: 767px) and (orientation: portrait) and (min-height:700px){
+                min-width: 2.4rem;
+                height: 2.4rem;
+                margin: 0 0.2rem;
+            }
             
             @media(min-width: $tablet){
                 min-width: 6.6rem;
