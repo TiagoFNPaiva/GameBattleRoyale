@@ -1,7 +1,9 @@
 html{
     background-color: black;
-    /*
     @media (max-width: 767px) and (orientation: portrait) {
+        width: 100vh;
+        height: 100vw;
+        /*
           transform: rotate(-90deg);
           transform-origin: left top;
           width: 100vh;
@@ -10,8 +12,8 @@ html{
           position: absolute;
           top: 100%;
           left: 0;
+          */
       }
-      */
 }
 
 
