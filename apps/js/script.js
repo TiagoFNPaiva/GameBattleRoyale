@@ -33,7 +33,7 @@ const db = [
     {
         id: 7,
         name: "League of Legends",
-        image: "url(../images/games/league-of-legends.png)"
+        image: "url(../images/games/league.png)"
     },
     {
         id: 8,
