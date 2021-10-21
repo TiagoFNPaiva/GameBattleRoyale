@@ -1,3 +1,4 @@
+window.screen.orientation.lock("landscape-primary")
 const db = [
     {
         id: 1,
