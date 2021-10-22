@@ -151,34 +151,12 @@ preloadImages(imgArr(db), function () {
 });
 
 
-const width = () => {
-    let a = ""
-    if (window.screen.width < 767) {
-        a = "180px"
-    }
-    if (window.screen.width < 400) {
-        a = "150px"
-    }
-    else {
-        a = "300px"
-    }
-    return a;
-}
 
-const height = () => {
-    let a = ""
-    if (window.screen.width < 767) {
-        a = "50px"
-    }
-    else {
-        a = "150px"
-    }
-    return a;
-}
 
 window.addEventListener("DOMContentLoaded", () => {
     screen.orientation.lock("landscape")
 
+    const gameArea = document.getElementsByClassName("game__container")[0];
     const sideA = document.getElementById("sideA");
     const sideB = document.getElementById("sideB");
     const sideAM = document.getElementsByClassName("game__area")[0];
@@ -191,6 +169,25 @@ window.addEventListener("DOMContentLoaded", () => {
     let coinSound = new Audio("../sounds/coin-sound.mp3");
     let choice = 0;
 
+    const width = () => {
+        let a = gameArea.clientWidth
+        let b = 2;
+
+        if (window.screen.width > 767) {
+            b = 4
+        }
+        return a / b + "px";
+    }
+
+    const height = () => {
+        let a = gameArea.clientHeight
+        let b = 2;
+
+        if (window.screen.width > 767) {
+            b = 4
+        }
+        return a / b + "px";
+    }
 
     const game = () => {
         const vs = [0, 0]

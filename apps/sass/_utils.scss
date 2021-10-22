@@ -4,6 +4,7 @@
 
 $tablet: 767px;
 $desktop: 1200px;
+$desktopHD:1440px;
 
 .visivel-m{
     display: block;
@@ -51,5 +52,8 @@ $desktop: 1200px;
                 
 }
 @media(min-width: $desktop){
+    
+}
+@media(min-width: $desktopHD){
     
 }

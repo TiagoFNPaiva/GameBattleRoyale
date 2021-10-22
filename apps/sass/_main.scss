@@ -24,8 +24,11 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 
-    //width: 100vw;
-    //height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
@@ -46,10 +49,19 @@ header{
     }
     @media(min-width: $tablet){
         padding-bottom: 0rem;
-        padding-top: 7rem;
+        //padding-top: 2rem;
+    }
+    @media(min-width: $tablet) and (min-height:400px){
+        padding-bottom: 2rem;
+        //padding-top: 0rem;
+    }
+    @media(min-width: $tablet) and (min-height:599px){
+        padding-bottom: 3rem;
+        padding-top: 4rem;
     }
     @media(min-width: $desktop){
-        
+        padding-bottom: 2rem;
+        padding-top: 5rem;
     }
 
     .header_frame{
@@ -72,10 +84,13 @@ header{
         
         
         @media(min-width: $tablet){
-            height: 23rem;
+            height: 11rem;
+        }
+        @media(min-width: $tablet) and (min-height:599px){
+            height: 15rem;
         }
         @media(min-width: $desktop){
-            
+            height: 23rem;
         }
         h1{
             font-size: 1.6rem;
@@ -83,11 +98,16 @@ header{
             text-align: center;
             line-height: 3rem;
             @media(min-width: $tablet){
-                font-size: 4rem;
-                line-height: 5.2rem;
+                font-size: 1.6rem;
+                line-height: 3rem;
+            }
+            @media(min-width: $tablet) and (min-height:599px){
+                font-size: 2rem;
+                line-height: 4rem;
             }
             @media(min-width: $desktop){
-                
+                font-size: 4rem;
+                line-height: 5.2rem;
             }
         }
         .main_h1{
@@ -101,10 +121,10 @@ header{
             transform: translate(-0.30rem,0.30rem);
             z-index: 1;
             @media(min-width: $tablet){
-                transform: translate(-0.60rem,0.60rem);
+                transform: translate(-0.40rem,0.40rem);
             }
             @media(min-width: $desktop){
-                
+                transform: translate(-0.60rem,0.60rem);
             }
         }
         
@@ -125,20 +145,26 @@ header{
         margin: 0 auto 1rem;
         background-color: transparent;
         @media (max-width: 767px) and (orientation: portrait) {
-            //flex-direction: column;
             flex-wrap: wrap;
             width: 90vw;
             margin-top: 8rem;
         }
         
         @media(min-width: $tablet){
-            aspect-ratio: 16/9;
-            justify-content: space-between;
-            width: 100rem;
-            margin: 0 auto -5rem;
+            flex-wrap: wrap;
+            width: 60vw;
+            margin-top: 2rem;
+        }
+        @media(min-width: $tablet) and (min-height:599px){
+            flex-wrap: wrap;
+            width: 75vw;
+            margin:2rem auto 5rem;
         }
         @media(min-width: $desktop){
-            
+            //aspect-ratio: 16/9;
+            justify-content: space-between;
+            width: 100rem;
+            margin: 5rem auto 5rem;
         }
         .option_frame{
             width: 15.3rem;
@@ -154,20 +180,18 @@ header{
                 //margin: 0 1rem;
                 width: 14rem;
                 height: 12.8rem;
-                &:first-child{
-                    
-                }
-                &:last-child{
-                    //margin-bottom: 2rem;
-
-                }
             }
             @media(min-width: $tablet){
-                width: 33.3rem;
-                height: 30.5rem;
+                width: 14rem;
+                height: 12.8rem;
+            }
+            @media(min-width: $tablet) and (min-height:599px){
+                width: 22rem;
+                height: 20.2rem;
             }
             @media(min-width: $desktop){
-                
+                width: 33.3rem;
+                height: 30.5rem;
             }
         }
         .game__area{
@@ -188,11 +212,16 @@ header{
             }
             
             @media(min-width: $tablet){
-                width: 25.7rem;
+                width: 76%;
                 height: 100%;
             }
             @media(min-width: $desktop){
-                
+                width: 76%;
+                height: 100%;
+            }
+            @media(min-width: $desktopHD){
+                width: 76%;
+                height: 100%;
             }
         }
         .game__area__name{
@@ -220,12 +249,17 @@ header{
             }
 
             @media(min-width: $tablet){
+                margin: -0.5rem 0rem 1rem;
+            }
+            @media(min-width: $tablet) and (min-height:599px){
+                width: 8rem;
+                height: 18rem;
+                margin: -0.5rem 2.5rem 2rem;
+            }
+            @media(min-width: $desktop){
                 width: 15rem;
                 height: 30rem;
                 margin: 0 auto 2rem;
-            }
-            @media(min-width: $desktop){
-                
             }
 
             canvas{
@@ -251,27 +285,27 @@ header{
     #choice_container{
         display: flex;
         max-width: 50%;
-        //min-height: 8rem;
+        
         margin: 0 auto;
         justify-content: start;
 
         overflow-x: scroll; 
 
-        //padding-bottom: 1rem;     
-        //background-color: crimson;
         
-        //scrollbar-width: thin;
         @media (max-width: 767px) and (orientation: portrait) {
             max-width: 80%;
         }
        
 
         @media(min-width: $tablet){
-            max-width: 100rem;
-            padding-bottom: 1rem; 
+            max-width: 60vw;
+        }
+        @media(min-width: $tablet) and (min-height:599px){
+            max-width: 75vw;
         }
         @media(min-width: $desktop){
-            
+            max-width: 100rem;
+            padding-bottom: 1rem; 
         }
         .choice_frame{
             min-width: 2rem;
@@ -289,12 +323,19 @@ header{
             }
             
             @media(min-width: $tablet){
+                min-width: 2.4rem;
+                height: 2.4rem;
+                margin: 0 0.2rem;
+            }
+            @media(min-width: $tablet) and (min-height:599px){
+                min-width: 4rem;
+                height: 4rem;
+                margin: 0 0.3rem;
+            }
+            @media(min-width: $desktop){
                 min-width: 6.6rem;
                 height: 6.6rem;
                 margin: 0 0.9rem;
-            }
-            @media(min-width: $desktop){
-                
             }
             
         }
