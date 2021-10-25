@@ -24,7 +24,7 @@ const db = [
         id: 5,
         name: "Galaga",
         image: "url(../images/games/galaga.png)"
-    },
+    }/*,
     {
         id: 6,
         name: "Counter Strike",
@@ -114,7 +114,7 @@ const db = [
         id: 23,
         name: "The Legend of Zelda",
         image: "url(../images/games/zelda.png)"
-    }
+    }*/
 ]
 // StackOverflow image preloader
 function preloadImages(urls, allImagesLoadedCallback) {
@@ -142,6 +142,8 @@ const imgArr = (db) => {
     db.forEach((element) => {
         imgArr.push(element.image.substring(7, element.image.length - 1))
     })
+    imgArr.push("images/chest_close.png");
+    imgArr.push("images/chest_open.png");
     return imgArr
 }
 
@@ -150,12 +152,11 @@ preloadImages(imgArr(db), function () {
     console.log('All images were loaded');
 });
 
-
-
+const replay = () => {
+    location.reload();
+}
 
 window.addEventListener("DOMContentLoaded", () => {
-    screen.orientation.lock("landscape")
-
     const gameArea = document.getElementsByClassName("game__container")[0];
     const sideA = document.getElementById("sideA");
     const sideB = document.getElementById("sideB");
@@ -165,41 +166,44 @@ window.addEventListener("DOMContentLoaded", () => {
     const coin = document.getElementById("coin__container")
     const bodyC = document.getElementsByTagName("body")[0];
 
-
+    const dbGame1 = db.slice()
     let coinSound = new Audio("../sounds/coin-sound.mp3");
     let choice = 0;
 
+
+
     const width = () => {
         let a = gameArea.clientWidth
-        let b = 2;
+        let b = 4;
 
         if (window.screen.width > 767) {
-            b = 4
+            b = 3.9
         }
         return a / b + "px";
     }
 
     const height = () => {
         let a = gameArea.clientHeight
-        let b = 2;
-
+        let b = 4;
+        if (window.screen.width < window.screen.height) {
+            b = 8
+        }
         if (window.screen.width > 767) {
-            b = 4
+            b = 3.9
         }
         return a / b + "px";
     }
 
-    const game = () => {
-        const vs = [0, 0]
+    const game = (dbGame) => {
+        console.log(dbGame);
+        let vs = [0, 0]
         const init = () => {
+            console.log("init");
             choice = 0;
             modA();
             modB();
             fillChoices();
-
-            //console.log(dbGame)
         }
-        const dbGame = db.slice()
 
         const randomGame = (dbarr) => {
             return Math.floor(Math.random() * dbarr.length);
@@ -207,18 +211,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const modA = () => {
             const indexArr = randomGame(dbGame)
-            //sideAM.style.backgroundColor = dbGame[indexArr].image
             sideAM.style.backgroundImage = dbGame[indexArr].image
-            //sideAM.getElementsByTagName("p")[0].innerText = dbGame[indexArr].name
             vs[0] = dbGame[indexArr]
             dbGame.splice(indexArr, 1);
         }
 
         const modB = () => {
             const indexArr = randomGame(dbGame)
-            //sideBM.style.backgroundColor = dbGame[indexArr].image
             sideBM.style.backgroundImage = dbGame[indexArr].image
-            //sideBM.getElementsByTagName("p")[0].innerText = dbGame[indexArr].name
             vs[1] = dbGame[indexArr]
             dbGame.splice(indexArr, 1);
         }
@@ -227,6 +227,7 @@ window.addEventListener("DOMContentLoaded", () => {
             for (i = 0; i < db.length - 1; i++) {
                 choiceCont.insertAdjacentHTML('beforeend',
                     `<div id="choice_${i}" class="choice_frame">
+                        <div class="white_circle"></div>
                 </div>`)
             }
         }
@@ -240,6 +241,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 canvas.style.height = height()
                 temp2.appendChild(canvas)
             });
+            temp.childNodes[1].classList.add("white_circle_ani")
             temp.style.backgroundImage = "url(../images/chest_open.png)";
             temp.addEventListener("mouseover", () => {
                 document.getElementsByTagName("canvas")[choice].style.display = "block"
@@ -303,7 +305,7 @@ window.addEventListener("DOMContentLoaded", () => {
                                 <img src=".//images/box_gameover.png" alt="gameover" srcset="">
                             </div>
                             <div class="game__win__options__gameover_back">
-                                <img onclick="myFunction()" src=".//images/box_playagain.png" alt="gameover" srcset="">
+                                <img onClick="replay()" src=".//images/box_playagain.png" alt="gameover" srcset="">
                             </div>
                         </div>
                         <div class="game__win__options__share">
@@ -313,6 +315,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 </div>
             </div>`)
             document.getElementsByClassName("game__winner")[0].style.backgroundImage = vs.image
+
+            sideB.removeEventListener('click', sideBEvent, true)
+            sideA.removeEventListener('click', sideAEvent, true)
+
         }
 
         const toggleCoin = () => {
@@ -324,8 +330,8 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-
-        sideA.addEventListener("click", () => {
+        const sideAEvent = () => {
+            console.log(dbGame.length);
             if (dbGame.length < 1) {
                 toggleCoin()
                 tempOpa1(sideB);
@@ -344,8 +350,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 modB();
                 choice++;
             }
-        })
-        sideB.addEventListener("click", () => {
+        }
+
+        const sideBEvent = () => {
             if (dbGame.length < 1) {
                 toggleCoin()
                 tempOpa1(sideA)
@@ -364,10 +371,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 modA();
                 choice++;
             }
-        })
-
+        }
 
         init();
+        console.log(dbGame);
+        sideA.addEventListener("click", sideAEvent);
+        sideB.addEventListener("click", sideBEvent);
+
+
+
     }
-    game();
+    game(dbGame1);
 })
