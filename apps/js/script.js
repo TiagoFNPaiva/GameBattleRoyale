@@ -24,7 +24,7 @@ const db = [
         id: 5,
         name: "Galaga",
         image: "url(../images/games/galaga.png)"
-    }/*,
+    },
     {
         id: 6,
         name: "Counter Strike",
@@ -114,7 +114,7 @@ const db = [
         id: 23,
         name: "The Legend of Zelda",
         image: "url(../images/games/zelda.png)"
-    }*/
+    }
 ]
 // StackOverflow image preloader
 function preloadImages(urls, allImagesLoadedCallback) {
