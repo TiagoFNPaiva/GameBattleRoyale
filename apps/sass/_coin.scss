@@ -17,7 +17,7 @@ $slide2:-20rem;
     background: linear-gradient(#a98805, #141001);
     margin: auto;
     position: absolute;
-    top: 18rem;
+    top: 7rem;
     left: 0;
     right: 0;
     bottom: 0;
@@ -29,12 +29,12 @@ $slide2:-20rem;
     transform-style: preserve-3d;
 
     @media(min-width: $tablet){
-      top: 15rem;
+      top: 7rem;
       font-size: 4rem;
       
     }
     @media(min-width: $desktop){
-      top: 15rem;
+      top: 7rem;
       font-size: 10rem;
     }
   }
@@ -140,7 +140,8 @@ $slide2:-20rem;
 
   #coin__container{
         opacity: 0;
-        
+        position: relative;
+        height: 100%;
   }
   .movecoin{
     animation: move_coin 1s linear;
