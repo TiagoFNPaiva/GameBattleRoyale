@@ -156,6 +156,17 @@ const replay = () => {
     location.reload();
 }
 
+const share = () => {
+    document.getElementsByClassName("game__win__options__share")[0].addEventListener("click", async () => {
+        try {
+            await navigator.share({ title: "Example Page", url: "" });
+            console.log("Data was shared successfully");
+        } catch (err) {
+            console.error("Share failed:", err.message);
+        }
+    });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
     const gameArea = document.getElementsByClassName("game__container")[0];
     const sideA = document.getElementById("sideA");
@@ -197,10 +208,8 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     const game = (dbGame) => {
-        console.log(dbGame);
         let vs = [0, 0]
         const init = () => {
-            console.log("init");
             choice = 0;
             modA();
             modB();
@@ -319,14 +328,7 @@ window.addEventListener("DOMContentLoaded", () => {
             sideB.removeEventListener('click', sideBEvent, true)
             sideA.removeEventListener('click', sideAEvent, true)
 
-            document.getElementsByClassName("game__win__options__share")[0].addEventListener("click", async () => {
-                try {
-                    await navigator.share({ title: "Example Page", url: "" });
-                    console.log("Data was shared successfully");
-                } catch (err) {
-                    console.error("Share failed:", err.message);
-                }
-            });
+            share();
         }
 
         const toggleCoin = (side) => {
@@ -340,7 +342,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         const sideAEvent = () => {
-            console.log(dbGame.length);
             if (dbGame.length < 1) {
                 toggleCoin(sideBM)
                 tempOpa1(sideB);
@@ -382,7 +383,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         init();
-        console.log(dbGame);
         sideA.addEventListener("click", sideAEvent);
         sideB.addEventListener("click", sideBEvent);
 
