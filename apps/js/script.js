@@ -7,7 +7,7 @@ const db = [
     },
     {
         id: 2,
-        name: "CM",
+        name: "Championship Manager",
         image: "url(../images/games/championship-manager.png)"
     },
     {
