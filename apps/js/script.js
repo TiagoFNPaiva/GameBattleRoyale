@@ -159,7 +159,7 @@ const replay = () => {
 const share = () => {
     document.getElementsByClassName("game__win__options__share")[0].addEventListener("click", async () => {
         try {
-            await navigator.share({ title: "Example Page", url: "" });
+            await navigator.share({ title: "Game Battle Royale", url: "" });
             console.log("Data was shared successfully");
         } catch (err) {
             console.error("Share failed:", err.message);
