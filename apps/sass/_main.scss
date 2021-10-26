@@ -637,23 +637,23 @@ header{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 33.3rem;
+            width: 50%;
             min-height: 12rem;
-            font-size: 3.2rem;
-            line-height: 4.4rem;
+            font-size: 2rem;
+            line-height: 3.4rem;
             font-family: "retro";
             text-align: center;
             color: #FFFFFF;
             @media (max-width: 767px) and (orientation: landscape) {
                 width: 50%;
-                font-size: 2rem;
-                line-height: 3.5rem;
+                font-size: 1.6rem;
+                line-height: 1.8rem;
                 min-height: 8rem;
             }
             @media(min-width: $tablet) and (min-height:350px) and (orientation: landscape){
                 width: 50%;
-                font-size: 2rem;
-                line-height: 3.5rem;
+                font-size: 1.6rem;
+                line-height: 2.5rem;
                 min-height: 7rem;
             }
             @media(min-width: $tablet) and (min-height:599px) and (orientation: landscape){
@@ -676,14 +676,14 @@ header{
                 min-height: 18rem;
             }
             @media(min-width: $desktop){
-                width: 50%;
+                width: 60%;
                 font-size: 3.2rem;
                 line-height: 4.4rem;
                 min-height: 14rem;
             }
             @media(min-width: $desktopHD){
                 font-size: 4rem;
-                line-height: 4.4rem;
+                line-height: 6.4rem;
                 min-height: 20rem;
             }
         }

@@ -37,7 +37,7 @@ const db = [
     },
     {
         id: 8,
-        name: "Metal gear Solid",
+        name: "Metal Gear Solid",
         image: "url(../images/games/metal-gear-solid.png)"
     },
     {
@@ -118,13 +118,13 @@ const db = [
 ]
 // StackOverflow image preloader
 function preloadImages(urls, allImagesLoadedCallback) {
-    console.log('Loading');
+    //console.log('Loading');
     var loadedCounter = 0;
     var toBeLoadedNumber = urls.length;
     urls.forEach(function (url) {
         preloadImage(url, function () {
             loadedCounter++;
-            console.log('Number of loaded images: ' + loadedCounter);
+            //console.log('Number of loaded images: ' + loadedCounter);
             if (loadedCounter == toBeLoadedNumber) {
                 allImagesLoadedCallback();
             }
@@ -288,7 +288,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
         const winner = (vs) => {
-            console.log("im in")
             document.getElementsByTagName("body")[0].insertAdjacentHTML('beforeend',
                 `<div id="game__win__container">
                 <div class="game__win">
@@ -320,6 +319,14 @@ window.addEventListener("DOMContentLoaded", () => {
             sideB.removeEventListener('click', sideBEvent, true)
             sideA.removeEventListener('click', sideAEvent, true)
 
+            document.getElementsByClassName("game__win__options__share")[0].addEventListener("click", async () => {
+                try {
+                    await navigator.share({ title: "Example Page", url: "" });
+                    console.log("Data was shared successfully");
+                } catch (err) {
+                    console.error("Share failed:", err.message);
+                }
+            });
         }
 
         const toggleCoin = (side) => {
