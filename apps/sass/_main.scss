@@ -369,6 +369,38 @@ header{
         height: 100%;
     }
   }
+.damage{
+    animation: damage 1s 1 linear;
+}
+@keyframes damage {
+    10%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0.3;
+    }
+    30%{
+        opacity: 1;
+    }
+    40%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    60%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.3;
+    }
+    90%{
+        opacity: 1;
+    }
+  }
 
 
 #game__win__container{

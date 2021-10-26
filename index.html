@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="manifest" href="manifest.json">
-
-
+    <link rel="preload" as="image" href="/images/load.jpg">
 
     <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
@@ -20,12 +18,37 @@
     <meta name="theme-color" content="#ffffff">
 
 
-
+    <!-- Primary Meta Tags -->
     <title>Game Battle Royale</title>
+    <meta name="title" content="Game Battle Royale">
+    <meta name="description"
+        content="Which game is your childhood baby? Which game is your favorite? Only one can win this battle, Who will be the last game standing?">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gamebattleroyale.herokuapp.com/">
+    <meta property="og:title" content="Game Battle Royale">
+    <meta property="og:description"
+        content="Which game is your childhood baby? Which game is your favorite? Only one can win this battle, Who will be the last game standing?">
+    <meta property="og:image" content="https://gamebattleroyale.herokuapp.com/images/meta.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gamebattleroyale.herokuapp.com/">
+    <meta property="twitter:title" content="Game Battle Royale">
+    <meta property="twitter:description"
+        content="Which game is your childhood baby? Which game is your favorite? Only one can win this battle, Who will be the last game standing?">
+    <meta property="twitter:image" content="https://gamebattleroyale.herokuapp.com/images/meta.png">
+
 </head>
 
-<body>
-    <header>
+
+<body class="loading">
+    <div id="loader" class="loaded">
+        <div class="spinner">
+        </div>
+    </div>
+    <header class="noselect">
         <div class="header_frame">
             <h1 class="main_h1">Game <br class="visivel-d"> Battle <br> Royale </h1>
             <h1 class="shadow_h1">Game <br class="visivel-d"> Battle <br> Royale </h1>
@@ -41,7 +64,7 @@
                 </div>
             </div>
             <div data-html2canvas-ignore class="game__vs">
-                <div id="coin__container">
+                <div id="coin__container" class="noselect">
                     <div class="coin">
                         <div class="side heads">
                             <div class="inner__coin">
@@ -70,7 +93,7 @@
     </main>
 
 
-
+    <script src="apps/js/load.js"></script>
     <script src="apps/js/html2canvas.min.js"></script>
     <script src="apps/js/script.js"></script>
 </body>

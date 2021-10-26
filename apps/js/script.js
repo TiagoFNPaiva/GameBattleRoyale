@@ -168,6 +168,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const dbGame1 = db.slice()
     let coinSound = new Audio("../sounds/coin-sound.mp3");
+    let damageSound = new Audio("../sounds/damage.mp3");
+    damageSound.volume = 0.1
     let choice = 0;
 
 
@@ -276,13 +278,12 @@ window.addEventListener("DOMContentLoaded", () => {
         const tempOpa1 = (side) => {
             side.style.backgroundColor = "black"
             side.style.opacity = 0.4
-            //side.style.filter = "grayscale(70%)"
         }
 
         const tempOpa2 = (side) => {
             side.style.backgroundColor = "transparent"
             side.style.opacity = 1
-            //side.style.filter = "grayscale(0)"
+
         }
 
 
@@ -321,54 +322,54 @@ window.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        const toggleCoin = () => {
+        const toggleCoin = (side) => {
             coin.classList.toggle("movecoin");
             bodyC.classList.toggle("no-clicks");
-
+            side.classList.toggle("damage");
             if (coin.classList.contains("movecoin")) {
                 coinSound.play();
+                setTimeout(() => damageSound.play(), 400);
             }
         }
 
         const sideAEvent = () => {
             console.log(dbGame.length);
             if (dbGame.length < 1) {
-                toggleCoin()
+                toggleCoin(sideBM)
                 tempOpa1(sideB);
                 modChoice(choice);
                 tempOpa2(sideB);
-                setTimeout(() => toggleCoin(), 900);
+                setTimeout(() => toggleCoin(sideBM), 900);
                 winner(vs[0]);
             }
             else {
-                toggleCoin();
+                toggleCoin(sideBM);
                 tempOpa1(sideB);
                 modChoice(choice)
                 tempOpa2(sideB);
-                setTimeout(() => toggleCoin(), 900);
+                setTimeout(() => toggleCoin(sideBM), 900);
+                setTimeout(() => modB(), 900);
 
-                modB();
                 choice++;
             }
         }
 
         const sideBEvent = () => {
             if (dbGame.length < 1) {
-                toggleCoin()
+                toggleCoin(sideAM)
                 tempOpa1(sideA)
                 modChoice(choice);
                 tempOpa2(sideA)
-                setTimeout(() => toggleCoin(), 900);
+                setTimeout(() => toggleCoin(sideAM), 900);
                 winner(vs[1]);
             }
             else {
-                toggleCoin()
+                toggleCoin(sideAM)
                 tempOpa1(sideA)
                 modChoice(choice);
                 tempOpa2(sideA)
-                setTimeout(() => toggleCoin(), 900);
-
-                modA();
+                setTimeout(() => toggleCoin(sideAM), 900);
+                setTimeout(() => modA(), 1200);
                 choice++;
             }
         }
