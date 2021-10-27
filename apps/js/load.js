@@ -1,5 +1,5 @@
 
-document.onreadystatechange = function () {
+document.onreadystatechange = setTimeout(() => {
     if (document.readyState === "complete") {
         document.getElementById(
             "loader").style.display = "none";
@@ -8,5 +8,5 @@ document.onreadystatechange = function () {
         document.getElementsByTagName(
             "body")[0].classList.remove('loading')
     }
-};
+}, 2000);
 

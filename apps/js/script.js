@@ -353,7 +353,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 modChoice(choice);
                 tempOpa2(sideB);
                 setTimeout(() => toggleCoin(sideBM), 900);
-                winner(vs[0]);
+                setTimeout(() => winner(vs[0]), 900)
             }
             else {
                 toggleCoin(sideBM);
@@ -374,7 +374,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 modChoice(choice);
                 tempOpa2(sideA)
                 setTimeout(() => toggleCoin(sideAM), 900);
-                winner(vs[1]);
+                setTimeout(() => winner(vs[1]), 900)
             }
             else {
                 toggleCoin(sideAM)
@@ -382,7 +382,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 modChoice(choice);
                 tempOpa2(sideA)
                 setTimeout(() => toggleCoin(sideAM), 900);
-                setTimeout(() => modA(), 1200);
+                setTimeout(() => modA(), 900);
                 choice++;
             }
         }
