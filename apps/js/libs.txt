@@ -1,0 +1,1 @@
+Html to canvas used to print fight result
